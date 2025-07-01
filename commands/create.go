@@ -6,9 +6,9 @@ import (
 	"task_scheduler/models"
 )
 
-func Create(Message string, delay int){
+func Create(message string, delay int){
 	task := models.Task {
-		Message:Message,
+		Message:message,
 		Delay:delay,
 		Executed: false,
 	}
@@ -18,7 +18,5 @@ func Create(Message string, delay int){
 		fmt.Print("honey singh not created in db beybye")
 		return
 	}
-	fmt.Print("honey singh saved in db succesfully.")
-
-
+	fmt.Printf("✅ Task created: \"%s\" will run after %d seconds (ID: %d)\n", message, delay, task.ID)
 }
